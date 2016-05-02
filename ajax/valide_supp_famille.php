@@ -1,0 +1,24 @@
+<?php
+
+session_start();
+
+include_once('../class/autoload.php');
+
+$errors         = array();
+$data 			= array();
+
+
+
+$data['success']=false;
+
+
+
+
+$tab=array();
+$mypdo=new mypdo();
+
+$tab['id_famille']=$_REQUEST['id_famille'];
+
+$data=$mypdo->supp_famille($tab);
+print_r (json_encode($data));
+?>
